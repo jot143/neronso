@@ -93,24 +93,29 @@ a:hover {
 	background-image: url(../images/footer-bg2.png);
 }
 .contact-form form input,
+.contact-form form select,
 .contact-form form textarea {
 	background-color: #333333;
 	box-shadow: 2px 2px 20px rgba(0,0,0,0.35);
 	color: #fff;
 }
 .contact-form form input::-webkit-input-placeholder,
+.contact-form form select::-webkit-input-placeholder,
 .contact-form form textarea::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #fff;
 }
 .contact-form form input::-moz-placeholder,
+.contact-form form select::-moz-placeholder,
 .contact-form form textarea::-webkit-input-placeholder { /* Firefox 19+ */
   color: #fff;
 }
 .contact-form form input:-ms-input-placeholder,
+.contact-form form select::-ms-input-placeholder,
 .contact-form form textarea::-webkit-input-placeholder { /* IE 10+ */
   color: #fff;
 }
 .contact-form form input:-moz-placeholder,
+.contact-form form select::-moz-placeholder,
 .contact-form form textarea::-webkit-input-placeholder { /* Firefox 18- */
   color: #fff;
 }
@@ -137,10 +142,10 @@ header.sticky {
 .mb-social-links li a:hover {
 	color: #897ffc;
 }
-nav ul li a:hover,
+/* nav ul li a:hover,
 nav ul li.active a {
 	color: #897ffc;
-}
+} */
 
 .main-section {
 	background-image: url(../images/main-sec-bg2.png);
@@ -187,7 +192,7 @@ nav ul li.active a {
 .trial-info {
 	text-align: center;
 	margin-bottom: 20px;
-	padding: 15px;
+	padding: 20px;
 	background-color: rgba(114, 96, 200, 0.1);
 	border-radius: 8px;
 }
