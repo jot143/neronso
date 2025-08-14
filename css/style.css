@@ -1698,3 +1698,133 @@ footer {
 	list-style-type: disc;
 	margin-bottom: 10px;
 }
+
+/* ================================================================================== 
+								Recurring Plans & Billing Declaration
+===================================================================================== */
+
+.single-plan-structure {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 15px;
+	padding: 30px;
+	margin-bottom: 30px;
+}
+
+.plan-timeline {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.timeline-item {
+	background: rgba(255, 255, 255, 0.05);
+	border: 2px solid transparent;
+	border-radius: 10px;
+	padding: 25px;
+	text-align: center;
+	transition: all 0.3s ease;
+	min-width: 200px;
+	position: relative;
+}
+
+.timeline-item:hover {
+	border-color: #007bff;
+	transform: translateY(-5px);
+}
+
+.timeline-marker {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin: 0 auto 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+}
+
+.timeline-marker.trial {
+	background: linear-gradient(135deg, #28a745, #20c997);
+}
+
+.timeline-marker.billing {
+	background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+.timeline-arrow {
+	font-size: 32px;
+	color: #007bff;
+	font-weight: bold;
+}
+
+.timeline-content h5 {
+	color: #fff;
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.timeline-content .price {
+	color: #007bff;
+	font-size: 28px;
+	font-weight: 700;
+	margin-bottom: 5px;
+}
+
+.timeline-content .period {
+	color: #ccc;
+	font-size: 14px;
+	display: block;
+	line-height: 1.4;
+}
+
+.billing-declaration {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 15px;
+	padding: 30px;
+	margin-top: 30px;
+}
+
+.declaration-content p {
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.6;
+	margin-bottom: 0;
+}
+
+.declaration-content strong {
+	color: #ffc107;
+}
+
+/* Responsive adjustments for single plan structure */
+@media (max-width: 768px) {
+	.single-plan-structure {
+		padding: 20px;
+	}
+	
+	.plan-timeline {
+		flex-direction: column;
+		gap: 15px;
+	}
+	
+	.timeline-arrow {
+		transform: rotate(90deg);
+	}
+	
+	.timeline-item {
+		min-width: auto;
+		width: 100%;
+	}
+	
+	.timeline-content .price {
+		font-size: 24px;
+	}
+	
+	.billing-declaration {
+		padding: 20px;
+	}
+}
