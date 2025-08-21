@@ -223,6 +223,51 @@
               </div>
             </div>
 
+            <!-- Payment Confirmation -->
+            <div class="row mt-4">
+              <div class="col-lg-12">
+                <div class="payment-confirmation">
+                  <h4 class="text-center text-white mb-4">
+                    Payment Confirmation
+                  </h4>
+                  <div class="confirmation-content">
+                    <p class="text-center">
+                      <strong>Payment Confirmation Process:</strong> Once the
+                      payment is made, the confirmation notice will be sent to
+                      the client via email within 24 hours of receipt. You will
+                      receive a detailed transaction receipt and confirmation of
+                      your subscription status.
+                    </p>
+                    <div class="confirmation-details text-center mt-3">
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="confirmation-item">
+                            <i class="fa fa-envelope-o"></i>
+                            <h5>Email Confirmation</h5>
+                            <p>Sent within 24 hours</p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="confirmation-item">
+                            <i class="fa fa-receipt"></i>
+                            <h5>Transaction Receipt</h5>
+                            <p>Detailed payment record</p>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="confirmation-item">
+                            <i class="fa fa-check-circle"></i>
+                            <h5>Subscription Status</h5>
+                            <p>Service activation confirmed</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="row">
               <div class="col-lg-12">
                 <div class="discount-info text-center">
@@ -357,6 +402,17 @@
                 <div class="col-lg-6">
                   <ul class="footer-links">
                     <li>
+                      <a href="terms-conditions.html" title=""
+                        >Terms & Conditions</a
+                      >
+                    </li>
+                    <li>
+                      <a href="privacy-policy.html" title="">Privacy Policy</a>
+                    </li>
+                    <li>
+                      <a href="cookie-policy.html" title="">Cookie Policy</a>
+                    </li>
+                    <li>
                       <a href="refund-policy.html" title="">Refund Policy</a>
                     </li>
                     <li>
@@ -364,8 +420,8 @@
                         >Cancellation Policy</a
                       >
                     </li>
-                    <li><a href="pricing.html" title="">Pricing</a></li>
-                    <li><a href="contact.html" title="">Contact</a></li>
+                    <!-- <li><a href="pricing.html" title="">Pricing</a></li>
+                    <li><a href="contact.html" title="">Contact</a></li> -->
                   </ul>
                 </div>
               </div>
@@ -385,5 +441,197 @@
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/validator.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- Cookie Consent Popup -->
+    <div id="cookie-consent-popup" class="cookie-consent-popup">
+      <div class="cookie-consent-content">
+        <div class="cookie-consent-header">
+          <h4><i class="fa fa-cookie-bite"></i> Cookie Policy</h4>
+          <button class="cookie-close-btn" onclick="closeCookieConsent()">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+        <div class="cookie-consent-body">
+          <p>
+            We use cookies to enhance your browsing experience, analyze site traffic, 
+            and personalize content. By clicking "Accept All Cookies", you consent to 
+            our use of cookies as described in our 
+            <a href="cookie-policy.html" target="_blank">Cookie Policy</a>.
+          </p>
+          <div class="cookie-consent-buttons">
+            <button class="btn-accept-all" onclick="acceptAllCookies()">
+              <i class="fa fa-check"></i> Accept All Cookies
+            </button>
+            <button class="btn-customize" onclick="customizeCookies()">
+              <i class="fa fa-cog"></i> Customize
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cookie Settings Modal -->
+    <div id="cookie-settings-modal" class="cookie-settings-modal">
+      <div class="cookie-settings-content">
+        <div class="cookie-settings-header">
+          <h4><i class="fa fa-cog"></i> Cookie Settings</h4>
+          <button class="modal-close-btn" onclick="closeCookieSettings()">
+            <i class="fa fa-times"></i>
+          </button>
+        </div>
+        <div class="cookie-settings-body">
+          <div class="cookie-category">
+            <div class="cookie-category-header">
+              <h5>Essential Cookies</h5>
+              <label class="switch">
+                <input type="checkbox" checked disabled>
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <p>These cookies are necessary for the website to function properly. They cannot be disabled.</p>
+          </div>
+          
+          <div class="cookie-category">
+            <div class="cookie-category-header">
+              <h5>Performance Cookies</h5>
+              <label class="switch">
+                <input type="checkbox" id="performance-cookies">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <p>These cookies help us understand how visitors interact with our website.</p>
+          </div>
+          
+          <div class="cookie-category">
+            <div class="cookie-category-header">
+              <h5>Functional Cookies</h5>
+              <label class="switch">
+                <input type="checkbox" id="functional-cookies">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <p>These cookies remember your preferences and settings.</p>
+          </div>
+          
+          <div class="cookie-category">
+            <div class="cookie-category-header">
+              <h5>Analytics Cookies</h5>
+              <label class="switch">
+                <input type="checkbox" id="analytics-cookies">
+                <span class="slider round"></span>
+              </label>
+            </div>
+            <p>These cookies provide insights into website usage and performance.</p>
+          </div>
+          
+          <div class="cookie-settings-buttons">
+            <button class="btn-save-preferences" onclick="saveCookiePreferences()">
+              <i class="fa fa-save"></i> Save Preferences
+            </button>
+            <button class="btn-accept-all-modal" onclick="acceptAllCookies()">
+              <i class="fa fa-check"></i> Accept All
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Cookie Consent Management
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check if user has already made a choice
+        if (!localStorage.getItem('cookieConsent')) {
+          showCookieConsent();
+        }
+      });
+
+      function showCookieConsent() {
+        document.getElementById('cookie-consent-popup').style.display = 'block';
+      }
+
+      function closeCookieConsent() {
+        document.getElementById('cookie-consent-popup').style.display = 'none';
+        // Set a temporary consent to avoid showing again immediately
+        localStorage.setItem('cookieConsent', 'temporary');
+      }
+
+      function acceptAllCookies() {
+        // Set all cookie preferences to true
+        localStorage.setItem('cookieConsent', 'all');
+        localStorage.setItem('performanceCookies', 'true');
+        localStorage.setItem('functionalCookies', 'true');
+        localStorage.setItem('analyticsCookies', 'true');
+        
+        // Hide both popup and modal
+        document.getElementById('cookie-consent-popup').style.display = 'none';
+        document.getElementById('cookie-settings-modal').style.display = 'none';
+        
+        // Show success message
+        showCookieSuccessMessage();
+      }
+
+      function customizeCookies() {
+        document.getElementById('cookie-consent-popup').style.display = 'none';
+        document.getElementById('cookie-settings-modal').style.display = 'block';
+        
+        // Load saved preferences
+        loadCookiePreferences();
+      }
+
+      function closeCookieSettings() {
+        document.getElementById('cookie-settings-modal').style.display = 'none';
+      }
+
+      function loadCookiePreferences() {
+        // Load saved preferences or set defaults
+        document.getElementById('performance-cookies').checked = 
+          localStorage.getItem('performanceCookies') === 'true';
+        document.getElementById('functional-cookies').checked = 
+          localStorage.getItem('functionalCookies') === 'true';
+        document.getElementById('analytics-cookies').checked = 
+          localStorage.getItem('analyticsCookies') === 'true';
+      }
+
+      function saveCookiePreferences() {
+        // Save user preferences
+        localStorage.setItem('cookieConsent', 'custom');
+        localStorage.setItem('performanceCookies', 
+          document.getElementById('performance-cookies').checked);
+        localStorage.setItem('functionalCookies', 
+          document.getElementById('functional-cookies').checked);
+        localStorage.setItem('analyticsCookies', 
+          document.getElementById('analytics-cookies').checked);
+        
+        // Hide modal
+        document.getElementById('cookie-settings-modal').style.display = 'none';
+        
+        // Show success message
+        showCookieSuccessMessage();
+      }
+
+      function showCookieSuccessMessage() {
+        // Create and show a success message
+        const successMsg = document.createElement('div');
+        successMsg.className = 'cookie-success-message';
+        successMsg.innerHTML = `
+          <i class="fa fa-check-circle"></i>
+          Cookie preferences saved successfully!
+        `;
+        document.body.appendChild(successMsg);
+        
+        // Remove after 3 seconds
+        setTimeout(() => {
+          successMsg.remove();
+        }, 3000);
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        const modal = document.getElementById('cookie-settings-modal');
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      }
+    </script>
   </body>
 </html>
