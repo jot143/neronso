@@ -453,9 +453,9 @@
         </div>
         <div class="cookie-consent-body">
           <p>
-            We use cookies to enhance your browsing experience, analyze site traffic, 
-            and personalize content. By clicking "Accept All Cookies", you consent to 
-            our use of cookies as described in our 
+            We use cookies to enhance your browsing experience, analyze site
+            traffic, and personalize content. By clicking "Accept All Cookies",
+            you consent to our use of cookies as described in our
             <a href="cookie-policy.html" target="_blank">Cookie Policy</a>.
           </p>
           <div class="cookie-consent-buttons">
@@ -484,48 +484,59 @@
             <div class="cookie-category-header">
               <h5>Essential Cookies</h5>
               <label class="switch">
-                <input type="checkbox" checked disabled>
+                <input type="checkbox" checked disabled />
                 <span class="slider round"></span>
               </label>
             </div>
-            <p>These cookies are necessary for the website to function properly. They cannot be disabled.</p>
+            <p>
+              These cookies are necessary for the website to function properly.
+              They cannot be disabled.
+            </p>
           </div>
-          
+
           <div class="cookie-category">
             <div class="cookie-category-header">
               <h5>Performance Cookies</h5>
               <label class="switch">
-                <input type="checkbox" id="performance-cookies">
+                <input type="checkbox" id="performance-cookies" />
                 <span class="slider round"></span>
               </label>
             </div>
-            <p>These cookies help us understand how visitors interact with our website.</p>
+            <p>
+              These cookies help us understand how visitors interact with our
+              website.
+            </p>
           </div>
-          
+
           <div class="cookie-category">
             <div class="cookie-category-header">
               <h5>Functional Cookies</h5>
               <label class="switch">
-                <input type="checkbox" id="functional-cookies">
+                <input type="checkbox" id="functional-cookies" />
                 <span class="slider round"></span>
               </label>
             </div>
             <p>These cookies remember your preferences and settings.</p>
           </div>
-          
+
           <div class="cookie-category">
             <div class="cookie-category-header">
               <h5>Analytics Cookies</h5>
               <label class="switch">
-                <input type="checkbox" id="analytics-cookies">
+                <input type="checkbox" id="analytics-cookies" />
                 <span class="slider round"></span>
               </label>
             </div>
-            <p>These cookies provide insights into website usage and performance.</p>
+            <p>
+              These cookies provide insights into website usage and performance.
+            </p>
           </div>
-          
+
           <div class="cookie-settings-buttons">
-            <button class="btn-save-preferences" onclick="saveCookiePreferences()">
+            <button
+              class="btn-save-preferences"
+              onclick="saveCookiePreferences()"
+            >
               <i class="fa fa-save"></i> Save Preferences
             </button>
             <button class="btn-accept-all-modal" onclick="acceptAllCookies()">
@@ -538,87 +549,94 @@
 
     <script>
       // Cookie Consent Management
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         // Check if user has already made a choice
-        if (!localStorage.getItem('cookieConsent')) {
+        if (!localStorage.getItem("cookieConsent")) {
           showCookieConsent();
         }
       });
 
       function showCookieConsent() {
-        document.getElementById('cookie-consent-popup').style.display = 'block';
+        document.getElementById("cookie-consent-popup").style.display = "block";
       }
 
       function closeCookieConsent() {
-        document.getElementById('cookie-consent-popup').style.display = 'none';
+        document.getElementById("cookie-consent-popup").style.display = "none";
         // Set a temporary consent to avoid showing again immediately
-        localStorage.setItem('cookieConsent', 'temporary');
+        localStorage.setItem("cookieConsent", "temporary");
       }
 
       function acceptAllCookies() {
         // Set all cookie preferences to true
-        localStorage.setItem('cookieConsent', 'all');
-        localStorage.setItem('performanceCookies', 'true');
-        localStorage.setItem('functionalCookies', 'true');
-        localStorage.setItem('analyticsCookies', 'true');
-        
+        localStorage.setItem("cookieConsent", "all");
+        localStorage.setItem("performanceCookies", "true");
+        localStorage.setItem("functionalCookies", "true");
+        localStorage.setItem("analyticsCookies", "true");
+
         // Hide both popup and modal
-        document.getElementById('cookie-consent-popup').style.display = 'none';
-        document.getElementById('cookie-settings-modal').style.display = 'none';
-        
+        document.getElementById("cookie-consent-popup").style.display = "none";
+        document.getElementById("cookie-settings-modal").style.display = "none";
+
         // Show success message
         showCookieSuccessMessage();
       }
 
       function customizeCookies() {
-        document.getElementById('cookie-consent-popup').style.display = 'none';
-        document.getElementById('cookie-settings-modal').style.display = 'block';
-        
+        document.getElementById("cookie-consent-popup").style.display = "none";
+        document.getElementById("cookie-settings-modal").style.display =
+          "block";
+
         // Load saved preferences
         loadCookiePreferences();
       }
 
       function closeCookieSettings() {
-        document.getElementById('cookie-settings-modal').style.display = 'none';
+        document.getElementById("cookie-settings-modal").style.display = "none";
       }
 
       function loadCookiePreferences() {
         // Load saved preferences or set defaults
-        document.getElementById('performance-cookies').checked = 
-          localStorage.getItem('performanceCookies') === 'true';
-        document.getElementById('functional-cookies').checked = 
-          localStorage.getItem('functionalCookies') === 'true';
-        document.getElementById('analytics-cookies').checked = 
-          localStorage.getItem('analyticsCookies') === 'true';
+        document.getElementById("performance-cookies").checked =
+          localStorage.getItem("performanceCookies") === "true";
+        document.getElementById("functional-cookies").checked =
+          localStorage.getItem("functionalCookies") === "true";
+        document.getElementById("analytics-cookies").checked =
+          localStorage.getItem("analyticsCookies") === "true";
       }
 
       function saveCookiePreferences() {
         // Save user preferences
-        localStorage.setItem('cookieConsent', 'custom');
-        localStorage.setItem('performanceCookies', 
-          document.getElementById('performance-cookies').checked);
-        localStorage.setItem('functionalCookies', 
-          document.getElementById('functional-cookies').checked);
-        localStorage.setItem('analyticsCookies', 
-          document.getElementById('analytics-cookies').checked);
-        
+        localStorage.setItem("cookieConsent", "custom");
+        localStorage.setItem(
+          "performanceCookies",
+          document.getElementById("performance-cookies").checked
+        );
+        localStorage.setItem(
+          "functionalCookies",
+          document.getElementById("functional-cookies").checked
+        );
+        localStorage.setItem(
+          "analyticsCookies",
+          document.getElementById("analytics-cookies").checked
+        );
+
         // Hide modal
-        document.getElementById('cookie-settings-modal').style.display = 'none';
-        
+        document.getElementById("cookie-settings-modal").style.display = "none";
+
         // Show success message
         showCookieSuccessMessage();
       }
 
       function showCookieSuccessMessage() {
         // Create and show a success message
-        const successMsg = document.createElement('div');
-        successMsg.className = 'cookie-success-message';
+        const successMsg = document.createElement("div");
+        successMsg.className = "cookie-success-message";
         successMsg.innerHTML = `
           <i class="fa fa-check-circle"></i>
           Cookie preferences saved successfully!
         `;
         document.body.appendChild(successMsg);
-        
+
         // Remove after 3 seconds
         setTimeout(() => {
           successMsg.remove();
@@ -626,12 +644,12 @@
       }
 
       // Close modal when clicking outside
-      window.onclick = function(event) {
-        const modal = document.getElementById('cookie-settings-modal');
+      window.onclick = function (event) {
+        const modal = document.getElementById("cookie-settings-modal");
         if (event.target === modal) {
-          modal.style.display = 'none';
+          modal.style.display = "none";
         }
-      }
+      };
     </script>
   </body>
 </html>
