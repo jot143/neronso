@@ -1876,6 +1876,21 @@ footer {
 	width: auto;
 }
 
+/* Payment card logo images */
+.card-logo img {
+	height: 60px;
+	width: auto;
+	max-width: 120px;
+	object-fit: contain;
+	filter: brightness(1.1) contrast(1.1);
+	transition: all 0.3s ease;
+}
+
+.card-logo:hover img {
+	filter: brightness(1.2) contrast(1.2);
+	transform: scale(1.05);
+}
+
 .payment-note p {
 	color: #ffc107;
 	font-size: 16px;
@@ -2377,6 +2392,31 @@ input:checked + .slider:before {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+	.payment-cards-logos {
+		flex-direction: column;
+		gap: 20px;
+	}
+	
+	.card-logo {
+		padding: 15px 20px;
+	}
+	
+	.card-logo img {
+		height: 50px;
+		max-width: 100px;
+	}
+	
+	.payment-cards-info h3 {
+		font-size: 28px;
+	}
+	
+	.payment-cards-info > p {
+		font-size: 16px;
+	}
+	
+	.payment-cards-section {
+		padding: 60px 0;
+	}
 	.cookie-consent-content {
 		padding: 15px;
 	}
